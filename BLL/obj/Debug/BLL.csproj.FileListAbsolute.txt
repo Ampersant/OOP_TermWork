@@ -1,0 +1,11 @@
+H:\PROJECTS\OOP_Term\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+H:\PROJECTS\OOP_Term\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+H:\PROJECTS\OOP_Term\BLL\bin\Debug\BLL.pdb
+H:\PROJECTS\OOP_Term\BLL\bin\Debug\DAL.pdb
+H:\PROJECTS\OOP_Term\BLL\obj\Debug\BLL.csproj.CopyComplete
+H:\PROJECTS\OOP_Term\BLL\obj\Debug\BLL.pdb
+H:\PROJECTS\OOP_Term\BLL\bin\Debug\BLL.dll.config
+H:\PROJECTS\OOP_Term\BLL\bin\Debug\BLL.dll
+H:\PROJECTS\OOP_Term\BLL\bin\Debug\DAL.dll
+H:\PROJECTS\OOP_Term\BLL\bin\Debug\DAL.dll.config
+H:\PROJECTS\OOP_Term\BLL\obj\Debug\BLL.dll

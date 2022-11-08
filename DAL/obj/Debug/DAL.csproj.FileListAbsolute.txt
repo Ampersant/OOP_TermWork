@@ -1,0 +1,7 @@
+H:\PROJECTS\OOP_Term\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+H:\PROJECTS\OOP_Term\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+H:\PROJECTS\OOP_Term\DAL\bin\Debug\DAL.pdb
+H:\PROJECTS\OOP_Term\DAL\obj\Debug\DAL.pdb
+H:\PROJECTS\OOP_Term\DAL\bin\Debug\DAL.dll.config
+H:\PROJECTS\OOP_Term\DAL\bin\Debug\DAL.dll
+H:\PROJECTS\OOP_Term\DAL\obj\Debug\DAL.dll

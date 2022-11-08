@@ -1,0 +1,15 @@
+H:\PROJECTS\OOP_Term\OOP_Term\obj\Debug\PL.csproj.AssemblyReference.cache
+H:\PROJECTS\OOP_Term\OOP_Term\obj\Debug\PL.csproj.SuggestedBindingRedirects.cache
+H:\PROJECTS\OOP_Term\OOP_Term\obj\Debug\PL.csproj.CoreCompileInputs.cache
+H:\PROJECTS\OOP_Term\OOP_Term\bin\Debug\OOP_Term.exe.config
+H:\PROJECTS\OOP_Term\OOP_Term\bin\Debug\OOP_Term.exe
+H:\PROJECTS\OOP_Term\OOP_Term\bin\Debug\OOP_Term.pdb
+H:\PROJECTS\OOP_Term\OOP_Term\bin\Debug\BLL.pdb
+H:\PROJECTS\OOP_Term\OOP_Term\bin\Debug\DAL.pdb
+H:\PROJECTS\OOP_Term\OOP_Term\obj\Debug\PL.csproj.CopyComplete
+H:\PROJECTS\OOP_Term\OOP_Term\obj\Debug\OOP_Term.exe
+H:\PROJECTS\OOP_Term\OOP_Term\obj\Debug\OOP_Term.pdb
+H:\PROJECTS\OOP_Term\OOP_Term\bin\Debug\BLL.dll
+H:\PROJECTS\OOP_Term\OOP_Term\bin\Debug\DAL.dll
+H:\PROJECTS\OOP_Term\OOP_Term\bin\Debug\BLL.dll.config
+H:\PROJECTS\OOP_Term\OOP_Term\bin\Debug\DAL.dll.config
