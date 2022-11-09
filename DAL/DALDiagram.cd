@@ -1,2 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DAL.DataBaseContext">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACACAIQAAgAAAAAQACAQAAAQABAAAAEAA=</HashCode>
+      <FileName>DataBaseContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Estate">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAEAAAAAgAAAABABAAAAARAAAAAQAgAAAAIgA=</HashCode>
+      <FileName>Estate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Client">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAQAAAAGAAEAAwABAIEAAACACAAAAAgAAA=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

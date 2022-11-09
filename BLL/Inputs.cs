@@ -106,9 +106,9 @@ namespace BLL
         }
         internal static double InputEstateSquare()
         {
-            Console.WriteLine("Enter the sqaure of estate (###+.##+):");
+            Console.WriteLine("Enter the sqaure of estate (#+.#+):");
             string data = Console.ReadLine();
-            Exception validation = new Exception(data, @"\d{3,6}\.\d{2,6}");
+            Exception validation = new Exception(data, @"\d{1,4}\.\d{1,6}");
             return double.Parse(validation.Check());
         }
         // logic

@@ -89,9 +89,14 @@ namespace BLL
                     double HCostBounds = Inputs.InputBoundsHCost();
                     double LCostBounds = Inputs.InputBoundsLCost();
                     string Type = Inputs.InputEstateType();
-                    props = PropWork.SelectBoundProp(EstateWork.GetAll(), client, Type, HCostBounds, LCostBounds);
+                    List<Estate> listcur = EstateWork.GetAll();
+                    if (listcur.Count == 0)
+                    {
+                        return Exception.ErrorList();
+                    }
+                    props = PropWork.SelectBoundProp(listcur, client, Type, HCostBounds, LCostBounds);
                     int q = props.Count();
-                    if (props != null)
+                    if (props != null && props.Count > 0)
                     {
                         for (int i = 0; i < 5 & i < q; i++)
                         {
@@ -107,14 +112,19 @@ namespace BLL
                         }
                         return "The end of list, please make a new one";
                     }
-                    return null;
+                    return "The list is empty";
                 }
                 else
                 {
-                    props = PropWork.SelectDefaultProp(EstateWork.GetAll(), client);
+                    List<Estate> listcur = EstateWork.GetAll();
+                    if (listcur.Count == 0)
+                    {
+                        return Exception.ErrorList();
+                    }
+                    props = PropWork.SelectDefaultProp(listcur, client);
                     int q = props.Count();
                     bool check = false;
-                    if (props != null)
+                    if (props != null && props.Count > 0)
                     {
                         for (int i = 0; i < q; i++)
                         {
@@ -128,7 +138,7 @@ namespace BLL
                         }
                         return "The end of list, please make a new one";
                     }
-                    return "The list is null";
+                    return "The list is empty";
                 }
             }
             else
