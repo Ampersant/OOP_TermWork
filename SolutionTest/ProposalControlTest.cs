@@ -13,6 +13,7 @@ namespace DLL
         [SetUp]
         public void Setup()
         {
+            // ARRANGE
              PC = new ProposalControl();
              client = new Client("Adam", "Green", "AD12345678", 12345, "1-room flat");
              _list = new List<Estate>();
