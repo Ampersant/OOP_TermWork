@@ -13,6 +13,7 @@ namespace BLL
     public class ProposalControl
     {
 
+        // sorting a Estates with LINQ for making a proposal List 
         public List<Estate> SelectDefaultProp(List<Estate> list, Client client)
         {
             if (list != null)
@@ -31,7 +32,6 @@ namespace BLL
             {
                 return new List<Estate>();
             }
-            
         }
 
         public List<Estate> SelectBoundProp(List<Estate> list, Client client, string Type, double HighCost, double LowCost = 0)
@@ -52,7 +52,6 @@ namespace BLL
             {
                 return new List<Estate>();
             }
-
         }
     }
 }

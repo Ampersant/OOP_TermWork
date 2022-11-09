@@ -52,6 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="BLLDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllControl.cs" />

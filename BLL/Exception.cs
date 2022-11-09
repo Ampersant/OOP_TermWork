@@ -16,7 +16,7 @@ namespace BLL
         public Exception(string data) { Data = data; }
         public string Check()
         {
-            Regex regex = new Regex(Format);
+            Regex regex = new Regex(Format); // makes it impossible to introduce invalid data
             while (!regex.IsMatch(Data))
             {
                 
@@ -26,6 +26,7 @@ namespace BLL
             }
             return Data;
         }
+        // exception examples
         public static string ErrorNullFile() => "File is empty, please enter your data firstly.";
         public static string ErrorWrongSer() => "Error: Wrong type of serialization, please select XML or JSON.";
         public static string InputError() => "Incorrect data, please try again:";

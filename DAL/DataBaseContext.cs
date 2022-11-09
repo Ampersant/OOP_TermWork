@@ -33,14 +33,13 @@ namespace DAL
             {
                 using (var file = new FileStream(s, FileMode.OpenOrCreate))
                 {
-                    var ret = JSONFormatterClients.ReadObject(file) as List<Client>;
-
-                    return ret;
+                        var ret = JSONFormatterClients.ReadObject(file) as List<Client>;
+                        return ret;
                 }
             }
             else
             {
-                return new List<Client>();
+                return null;
             }
         }
         public string ClientStringReader()
@@ -54,11 +53,16 @@ namespace DAL
                     subst += $"{item.GetData()} \n";
                 }
                 return subst;
-
             }
             return "File is empty, please enter your data firstly";
-
-
+        }
+        public void DeleteClient()
+        {
+            string s = root + "\\JSONClientsForm.json";
+            if (File.Exists(s))
+            {
+                File.Delete(s);
+            }
         }
 
         // Estate
@@ -79,7 +83,10 @@ namespace DAL
                 using (var file = new FileStream(s, FileMode.OpenOrCreate))
                 {
                     var ret = JSONFormatterEstates.ReadObject(file) as List<Estate>;
-
+                    if (ret == null)
+                    {
+                        return new List<Estate>();
+                    }
                     return ret;
                 }
             }
@@ -102,10 +109,13 @@ namespace DAL
             }
             return "File is empty, please enter your data firstly";
         }
-
-    }
-
-    
-       
-    
+        public void DeleteEstate()
+        {
+            string s = root + "\\JSONEstatesForm.json";
+            if (File.Exists(s))
+            {
+                File.Delete(s);
+            }
+        }
+    } 
 }

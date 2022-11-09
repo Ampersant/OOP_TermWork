@@ -17,7 +17,7 @@ namespace BLL
         protected static ProposalControl PropWork = new ProposalControl();
 
         public static ClientsControl Clientwork { get; }
-        public static string WorkWithClient()
+        public static string WorkWithClient() // Create + Delte + Edit for clients
         {
             string s = Inputs.InputDo();
             if (s == "Create")
@@ -34,7 +34,7 @@ namespace BLL
                return ClientWork.EditClient();
             }
         }
-        public static string WorkWithEstate()
+        public static string WorkWithEstate() // Create + Delte + Edit for estates
         {
             string s = Inputs.InputDo();
             if (s == "Create")
@@ -51,7 +51,7 @@ namespace BLL
                 return EstateWork.EditEstate();
             }
         }
-        public static string ShowDefaultList()
+        public static string ShowDefaultList() // showing non-sorted lists of clients or estates
         {
             string s = Inputs.InputWhatList();
             if (s == "1")
@@ -63,8 +63,7 @@ namespace BLL
                 return EstateWork.GetEstateList();
             }
         }
-
-        public static string ShowSortedList()
+        public static string ShowSortedList() // showing sorted lists of clients or estates by some rules 
         {
             string s = Inputs.InputWhatList();
             if (s == "1")
@@ -76,8 +75,7 @@ namespace BLL
                 return EstateWork.GetSortedList();
             }
         }
-
-        public static string MakeProposalList()
+        public static string MakeProposalList() // generating the proposal list for speific user by his preferences or filtrs
         {
             int count = 0;
             Client client = ClientWork.SearchClient();
@@ -93,7 +91,6 @@ namespace BLL
                     string Type = Inputs.InputEstateType();
                     props = PropWork.SelectBoundProp(EstateWork.GetAll(), client, Type, HCostBounds, LCostBounds);
                     int q = props.Count();
-
                     if (props != null)
                     {
                         for (int i = 0; i < 5 & i < q; i++)
@@ -106,10 +103,7 @@ namespace BLL
                             { 
                                 EstateWork.EditEstate(props[id]);
                                 return "You have bought it succesfully!";
-
                             }
-
-
                         }
                         return "The end of list, please make a new one";
                     }
@@ -130,7 +124,6 @@ namespace BLL
                             {
                                 EstateWork.EditEstate(props[id]);
                                 return "You have bought it succesfully!";
-
                             }  
                         }
                         return "The end of list, please make a new one";
@@ -142,16 +135,14 @@ namespace BLL
             {
                 return Exception.ErrorID();
             }
-            
-
         }
-        public static string SearchByKeyword()
+        public static string SearchByKeyword() //search by keyword for list of clients or estates or clients+estates 
         {
             string s = Inputs.InputTypeSearch();
             string keyword = Inputs.InputKeywordSearch();
             if (s == "1")
             {
-              return  ClientWork.SearchClByKeyword(keyword);
+              return ClientWork.SearchClByKeyword(keyword);
             }
             else if (s == "2")
             {
@@ -159,13 +150,18 @@ namespace BLL
             }
             string subst = ClientWork.SearchClByKeyword(keyword) + EstateWork.SearchEsByKeyword(keyword);
             return subst;
-
-            
-          
-
-
         }
-        
-
+        public static string GetEsp()
+        {
+            string s = Inputs.InputWhatList();
+            if (s == "1")
+            {
+                return ClientWork.ShowClient();
+            }
+            else
+            {
+                return EstateWork.ShowEstate();
+            }
+        }
     }
 }

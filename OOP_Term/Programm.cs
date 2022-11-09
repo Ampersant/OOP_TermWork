@@ -10,12 +10,8 @@ namespace PL
     {
         static void Main(string[] args) // головна функція
         {
-            
-
             Menu CM = new Menu();
-            
             CM.ShowMenu();
         }
-
     }
 }

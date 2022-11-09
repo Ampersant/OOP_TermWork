@@ -1,6 +1,7 @@
 ﻿using DAL;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -8,16 +9,28 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class ClientsControl
+    public class ClientsControl // describing all the work with clients 
     {
-        protected static DataBaseContext datb = new DataBaseContext();
+        protected static DataBaseContext datb = new DataBaseContext(); // obj to work with DB
         protected List<Client> ClientList { get; set; }
-        public void SaveChanges()
+        public void SaveChanges() // working with DB, save changes with client list 
         {
             datb.ClientWriter(ClientList);
             ClientList = datb.ClientReader();
         }
-        public void CreateClient()
+        public bool checkList() // checking for null
+        {
+            ClientList = datb.ClientReader();
+            if (ClientList == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public void CreateClient() // creation 
         {
             ClientList = datb.ClientReader();
             string FName = Inputs.InputFirstName();
@@ -45,7 +58,7 @@ namespace BLL
                 SaveChanges();
             }
         }
-        public Client SearchClient()
+        public Client SearchClient() // searching
         {
             ClientList = datb.ClientReader();
             int id = Inputs.InputUserID();
@@ -61,28 +74,36 @@ namespace BLL
             }
            return null;
         }
-        public string DeleteClient()
+        public string DeleteClient() // deleting
         {
-            //ClientList = datb.ClientReader();
+            if (checkList())
+            {
+                return Exception.ErrorNullFile();
+            }
+            if (ClientList.Count == 1)
+            {
+                datb.DeleteClient();
+                return "There was the last client, deleting is successfull";
+            }
             Client obj = SearchClient();
             if (obj != null)
             {
                 ClientList.Remove(obj);
                 SaveChanges();
-
                 return "Deleting is successfull";
-
             }
             else
             {
                 return Exception.ErrorID(); ;
             }
         }
-        public string EditClient()
+        public string EditClient() // editing
         {
+            if (checkList())
+            {
+                return Exception.ErrorNullFile();
+            }
             Client obj = SearchClient();
-
-            
             if (obj != null)
             {
                 string s = Inputs.InputWhatToEditCl();
@@ -123,9 +144,8 @@ namespace BLL
                 return Exception.ErrorID(); ;
             }
         }
-        public string ShowClient()
+        public string ShowClient() // look for an especial client
         {
-
             Client obj = SearchClient();
             if (obj != null)
             {
@@ -133,11 +153,10 @@ namespace BLL
             }
             else 
             {
-                return Exception.ErrorID(); ;
+               return Exception.ErrorID(); ;
             }
         }
-
-        public string GetClientList()
+        public string GetClientList() // reeturn all information about clients as string
         {
             string s = "";
             ClientList = datb.ClientReader();
@@ -151,7 +170,7 @@ namespace BLL
             }
             return Exception.ErrorList();
         }
-        public string GetSortedList()
+        public string GetSortedList() // return sorted list of clients as string 
         {
             string s = "";
             List<Client> sorted = new List<Client>();
@@ -183,12 +202,12 @@ namespace BLL
             }
             return s;
         }
-        public List<Client> GetAll()
+        public List<Client> GetAll() // return clients as the List<Client> object
         {
             ClientList = datb.ClientReader();
             return ClientList;
         }
-        public string SearchClByKeyword(string s)
+        public string SearchClByKeyword(string s) // searching client by keyword
         {
             List<Client> res = new List<Client>();
             string subst = "";

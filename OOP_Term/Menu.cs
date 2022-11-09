@@ -13,17 +13,17 @@ namespace PL
         protected string[] menuItems = new string[] {"To move across menu use arrows \"UP\" and \"DOWN\", to choose something press \"Enter\" \n (Don't use arrows to end some actions!) ",
                    "1. Work with clients.",
                 "2. Work with estates.", "3. Show default list.",
-           "4. Show sorted list.", "5. Make proposal list", "6. Search by keyword", "7. Print File", "8. Delete !All! Files", "9. Exit the programm"};
+           "4. Show sorted list.", "5. Make proposal list", "6. Search by keyword", "7. Get info about entity", "8. Exit the programm"};
         protected int counter = 0;
-
+        // test
         delegate void method();
-
+  
         
 
         public static void InputError() => Console.WriteLine("Incorrect data, please try again:");
         public static string ReadItem() => Console.ReadLine();
         public static void WriteItem(string s) => Console.WriteLine(s);
-        public int PrintMenu() // функція повторного виведення меню
+        public int PrintMenu() // repetiang showing function 
         {
             ConsoleKeyInfo key;
             do
@@ -33,7 +33,7 @@ namespace PL
                 {
                     if (counter == i)
                     {
-                        // оформлення зовнішнього вигляду меню
+                        // front 
                         Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine(menuItems[i]);
@@ -44,7 +44,7 @@ namespace PL
                         Console.WriteLine(menuItems[i]);
 
                 }
-                key = Console.ReadKey(); // оформлення "руху" по меню
+                key = Console.ReadKey(); // "moving" through menu
                 if (key.Key == ConsoleKey.UpArrow)
                 {
                     counter--;
@@ -64,7 +64,7 @@ namespace PL
             do
             {
                 Menu menu = this;
-                method[] methods = new method[] { Text, Method1, Method2, Method3, Method5, Method6, Method7, Method8, Method9, Exit };
+                method[] methods = new method[] { Text, Method1, Method2, Method3, Method5, Method6, Method7, Method8, Exit };
                 menuResult = menu.PrintMenu();
                 methods[menuResult]();
                 Console.WriteLine("To continue press any key..");
@@ -79,20 +79,15 @@ namespace PL
         void Method1()
         {
             Console.WriteLine(Menu.WorkWithClient());
-
         }
         void Method2()
         {
-
             Console.WriteLine(Menu.WorkWithEstate());
-
         }
         void Method3()
         {
             Console.WriteLine(Menu.ShowDefaultList()); 
-       
         }
-
         void Method5()
         {
             Console.WriteLine(Menu.ShowSortedList());
@@ -107,11 +102,7 @@ namespace PL
         }
         void Method8()
         {
-          //  Console.WriteLine(en.Read());
-        }
-        void Method9()
-        {
-          //  Console.WriteLine(en.Delete());
+          Console.WriteLine(Menu.GetEsp());
         }
         static void Exit()
         {

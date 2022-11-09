@@ -23,8 +23,6 @@ namespace DAL
         protected string preferType;
         [DataMember]
         protected int likeEstates;
-
-
         public string Name 
         { 
             get { return name; }
@@ -68,60 +66,6 @@ namespace DAL
         {
             string s = $"Client: \n\tName = {this.Name} \n\tSurname = {this.Surname} \n\tBank ID = {this.BankID}  \n\tUser ID = {this.UserID}, \n\tPreference = {this.PreferType}";
             return s;
-        }
-       public int sortByName(object obj)
-        {
-            Client temp = obj as Client;
-            if (temp != null)
-            {
-                //Порівняння здійснюється за номером студентського квитка
-                string id1 = this.Name;
-                string id2 = temp.Name;
-                if (id1.First() > id2.First())
-                    return 1;
-                if (id1.First() < id2.First())
-                    return -1;
-                else
-                    return 0;
-            }
-            else
-                throw new ArgumentException("Parametr is not a Student");
-        }
-        public int SortBySurname(object obj)
-        {
-            Client temp = obj as Client;
-            if (temp != null)
-            {
-                //Порівняння здійснюється за номером студентського квитка
-                string id1 = this.Surname;
-                string id2 = temp.Surname;
-                if (id1.First() > id2.First())
-                    return 1;
-                if (id1.First() < id2.First())
-                    return -1;
-                else
-                    return 0;
-            }
-            else
-                throw new ArgumentException("Parameter is not a Client");
-        }
-        public int SortByBank(object obj)
-        {
-            Client temp = obj as Client;
-            if (temp != null)
-            {
-                //Порівняння здійснюється за номером студентського квитка
-                char id1 = this.BankID[2];
-                char id2 = temp.BankID[2];
-                if (id1 > id2)
-                    return 1;
-                if (id1 < id2)
-                    return -1;
-                else
-                    return 0;
-            }
-            else
-                throw new ArgumentException("Parameter is not a Client");
         }
     }
 }

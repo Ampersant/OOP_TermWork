@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using DAL;
 
+
 namespace BLL
 {
     public class Inputs
@@ -50,7 +51,7 @@ namespace BLL
                 Exception validation = new Exception(data, @"^\d{5}$");
                 return int.Parse(validation.Check());
             }
-           
+
         }
         // estate side 
         internal static string InputEstateType()
@@ -129,7 +130,6 @@ namespace BLL
             {
                 return "Edit";
             }
-
         }
         // list 
         internal static string InputWhatList()
@@ -160,6 +160,7 @@ namespace BLL
             Exception validation = new Exception(data, @"[1-2]{1}$");
             return validation.Check();
         }
+        // proposal list
         internal static double InputBoundsHCost()
         {
             Console.WriteLine("Enter the !hieghest! cost of estate (###+.##+):");
@@ -183,6 +184,7 @@ namespace BLL
             Exception validation = new Exception(data, @"[1-2]{1}$");
             return validation.Check();
         }
+        // keyword search
         internal static string InputTypeSearch()
         {
             Console.WriteLine($"1 - Search for clients || 2 - Search for estate || 3 - Search for all");
@@ -194,12 +196,12 @@ namespace BLL
         {
             Console.WriteLine($"Please, enter the keyword to search the object...");
             string data = Console.ReadLine();
-            Exception validation = new Exception(data, @"[^\w\s]");
+            Exception validation = new Exception(data, @"^[\w\s]");
             return validation.Check();
         }
         internal static string InputWhatToEditCl()
         {
-            
+
             var props = typeof(Client).GetProperties();
             int count = 0;
             foreach (var item in props)
@@ -211,6 +213,7 @@ namespace BLL
             Exception validation = new Exception(data, @"^[1-6]{1}$");
             return validation.Check();
         }
+        // edit 
         internal static string InputWhatToEditEs()
         {
 
@@ -225,6 +228,5 @@ namespace BLL
             Exception validation = new Exception(data, @"^[1-5]{1}$");
             return validation.Check();
         }
-
     }
 }
